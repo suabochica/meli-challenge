@@ -20,16 +20,15 @@
     "strict": true,
     "target": "esnext",
     "useDefineForClassFields": true,
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
-      "@/src/*": ["./*"],
-      "@/assets/*": ["./assets/*"],
-      "@/components/*": ["./components/*"],
-      "@/types/*": ["./types/*"],
-      "@/hooks/*": ["./hooks/*"],
-      "@/layouts/*": ["./layouts/*"],
-      "@/pages/*": ["./pages/*"],
-      "@/utils/*": ["./utils/*"]
+      "@/assets/*": ["src/assets/*"],
+      "@/components/*": ["src/components/*"],
+      "@/types/*": ["src/types/*"],
+      "@/hooks/*": ["src/hooks/*"],
+      "@/layouts/*": ["src/layouts/*"],
+      "@/pages/*": ["src/pages/*"],
+      "@/utils/*": ["src/utils/*"]
     },
     "typeRoots": ["node_modules/@types", "./types"]
   },
