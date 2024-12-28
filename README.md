@@ -5,6 +5,9 @@ Meli Challenge
 ----
 
 - [pnpm](https://pnpm.io), as package manager.
+- [react](https://react.dev/), as UI library for web.
+- [react-router](https://reactrouter.com/), as standard-focused, muilti-strategy router for react.
+- [vite](https://vite.dev/), as build tool.
 
 🔌 PlugIns
 ----

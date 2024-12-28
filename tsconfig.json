@@ -25,9 +25,9 @@
       "@/src/*": ["./*"],
       "@/assets/*": ["./assets/*"],
       "@/components/*": ["./components/*"],
-      "@/config/*": ["./config/*"],
+      "@/types/*": ["./types/*"],
       "@/hooks/*": ["./hooks/*"],
-      "@/ioc/*": ["./ioc/*"],
+      "@/layouts/*": ["./layouts/*"],
       "@/pages/*": ["./pages/*"],
       "@/utils/*": ["./utils/*"]
     },
