@@ -13,7 +13,7 @@ export const getItemById = async (id: string): Promise<void> => {
       .then((data: ItemType) => data);
 
     const itemDescriptionPromise = fetch(
-      `https://api.mercadolibre.com/items/${id}/description`
+      `https://api.mercadolibre.com/items/${id}/description`,
     )
       .then((response) => response.json())
       .then((data: ItemDescriptionType) => data);
@@ -33,11 +33,11 @@ export const getItemById = async (id: string): Promise<void> => {
 };
 
 export const searchItemsByName = async (
-  query: string
+  query: string,
 ): Promise<ParsedSearchData | undefined> => {
   try {
     const response = await fetch(
-      `https://api.mercadolibre.com/sites/MLA/search?q=${query}`
+      `https://api.mercadolibre.com/sites/MLA/search?q=${query}`,
     );
     const data = await response.json();
     const parsedData = parseSearchData(data);
