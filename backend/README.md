@@ -4,8 +4,9 @@ Backend
 🧰 Tech Stack
 ----
 
-- [node](https://nodejs.org/en), to run javascript everywhere.
-- [express](https://expressjs.com/es/), as web infrastructore for node.
+- [node](https://nodejs.org/en), to run JavaScript everywhere.
+- [express](https://expressjs.com/es/), as web infrastructure for Node.
+- [tsx](https://expressjs.com/es/), as runtime for TypeScript for Node.
 
 🔌 PlugIns
 ----

@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",               // Modern JavaScript syntax
+    "module": "ESNext",               // Use ES modules
+    "moduleResolution": "node",       // Resolve modules in Node.js style
+    "strict": true,                   // Enable all strict type-checking options
+    "esModuleInterop": true,          // Support for CommonJS modules
+    "forceConsistentCasingInFileNames": true, // Avoid file casing mismatches
+    "skipLibCheck": true,             // Skip type checks of declaration files
+    "baseUrl": ".",                   // Base directory for resolving paths
+    "paths": {                        // Path aliases for clean imports
+      "@/routes/*": ["src/routes/*"],
+      "@/controllers/*": ["src/controllers/*"],
+      "@/models/*": ["src/models/*"],
+      "@/services/*": ["src/services/*"],
+      "@/utils/*": ["src/utils/*"],
+      "@/config/*": ["src/config/*"]
+    },
+    "rootDir": "./src",               // Root directory for input files
+    "outDir": "./dist",               // Output directory for compiled files
+    "resolveJsonModule": true,        // Import JSON files
+    "isolatedModules": true,          // Required for transpiling with ts-node
+    "allowSyntheticDefaultImports": true // Use default imports for CommonJS modules
+  },
+  "include": ["src/**/*"],            // Files to include in the project
+  "exclude": ["node_modules", "dist"] // Files to exclude from the project
+}
