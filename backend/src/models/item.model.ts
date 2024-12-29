@@ -10,6 +10,8 @@ const Item = z.object({
   title: z.string(),
   description: ItemDescription,
   price: z.number(),
+  condition: z.string(),
+  thumbnail: z.string(),
 })
 
 // Infer the TypeScript types

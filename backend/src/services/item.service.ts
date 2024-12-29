@@ -1,5 +1,10 @@
 import { ItemDescriptionType, ItemType } from "@/models/item.model";
-import { parseProductData } from "@/utils/parsers";
+
+import { parseItemData } from "@/utils/parseItemData";
+import {
+  parseSearchData,
+  type ParsedSearchData,
+} from "@/utils/parseSearchData";
 
 export const getItemById = async (id: string): Promise<void> => {
   try {
@@ -19,11 +24,26 @@ export const getItemById = async (id: string): Promise<void> => {
       itemDescriptionPromise,
     ]);
 
-    // Parse the data (implement parseProductData based on your requirements)
-    const parsedData = parseProductData(itemData, itemDescription);
+    const parsedData = parseItemData(itemData, itemDescription);
 
     return parsedData;
   } catch (error) {
     console.error(`Error fetching data for item ID ${id}:`, error);
+  }
+};
+
+export const searchItemsByName = async (
+  query: string
+): Promise<ParsedSearchData | undefined> => {
+  try {
+    const response = await fetch(
+      `https://api.mercadolibre.com/sites/MLA/search?q=${query}`
+    );
+    const data = await response.json();
+    const parsedData = parseSearchData(data);
+
+    return parsedData;
+  } catch (error) {
+    console.error(`Error fetching search results for query "${query}":`, error);
   }
 };
