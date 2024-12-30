@@ -23,5 +23,6 @@
     "allowSyntheticDefaultImports": true // Use default imports for CommonJS modules
   },
   "include": ["src/**/*"],            // Files to include in the project
-  "exclude": ["node_modules", "dist"] // Files to exclude from the project
+  "exclude": ["node_modules", "dist"], // Files to exclude from the project
+  "types": ["@types/jest"],
 }
