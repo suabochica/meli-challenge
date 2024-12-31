@@ -1,9 +1,13 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
+
+import SearchBar from "@/components/SearchBar";
 
 function Layout({ children }: { children: ReactNode }) {
   return (
     <div>
-      <header>Header</header>
+      <header>
+        <SearchBar />
+      </header>
       <main>{children}</main>
       <footer>Footer</footer>
     </div>
