@@ -11,9 +11,10 @@ app.get("/health", (req, res) => {
   });
 });
 
-describe("Health Check Endpoint", () => {
+describe("Health Check Controller", () => {
   it("should return a 200 status and status: UP", async () => {
     const response = await request(app).get("/health");
+    
     expect(response.status).toBe(200);
     expect(response.body).toHaveProperty("status", "UP");
     expect(response.body).toHaveProperty("timestamp");
