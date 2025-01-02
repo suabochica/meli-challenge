@@ -19,6 +19,7 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
     "useDefineForClassFields": true,
     "baseUrl": "./",
     "paths": {
