@@ -1,10 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router";
 
 import Layout from "@/layouts/Layout";
 
 import Home from "@/pages/Home";
-import ItemDetails from "@/pages/ItemDetails";
-import SearchResults from "@/pages/SearchResults";
+import Detail from "@/pages/Detail";
+import Search from "@/pages/Search";
 
 function App() {
   return (
@@ -12,12 +12,17 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/items/:id" element={<ItemDetails />}></Route>
-          <Route path="/items" element={<SearchResults />}></Route>
+          <Route path="/items/:id" element={<Detail />}></Route>
+          <Route path="/items" element={<SearchWithQuery />}></Route>
         </Routes>
       </Layout>
     </BrowserRouter>
   );
+}
+
+function SearchWithQuery() {
+  const query = new URLSearchParams(useLocation().search);
+  return <Search search={query.get("search") || ""} />;
 }
 
 export default App;

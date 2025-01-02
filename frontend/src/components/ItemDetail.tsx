@@ -1,12 +1,6 @@
 import type { Item } from "@/types/item";
 
-import { FC } from "react";
-
-interface DetailedItemProps {
-  item: Item;
-}
-
-const DetailedItem: FC<DetailedItemProps> = ({ item }) => {
+export default function ItemDetail ({ item }: { item: Item }) {
   const conditions = {
     new: "Nuevo",
     used: "Usado",
@@ -46,5 +40,3 @@ const DetailedItem: FC<DetailedItemProps> = ({ item }) => {
     </>
   );
 };
-
-export default DetailedItem;

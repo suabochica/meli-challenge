@@ -4,7 +4,7 @@ import SearchBar from "@/components/SearchBar";
 
 function Layout({ children }: { children: ReactNode }) {
   return (
-    <div>
+    <div className="mt-10">
       <header>
         <SearchBar />
       </header>

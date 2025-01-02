@@ -5,6 +5,7 @@ export type Item = {
   description: string;
   id: string;
   picture: string;
+  free_shipping: boolean;
   price: Price;
   sold_quantity: number | string;
   thumbnail: string;
@@ -12,6 +13,7 @@ export type Item = {
 };
 
 type Price = {
+  currency: string;
   amount: number;
-  decimals: number;
+  decimals?: number;
 };
