@@ -14,7 +14,7 @@ export default function BreadCrumb({ categories }: BreadCrumbProps) {
           categories.map((category) => (
             <a
               href="#"
-              className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
+              className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600"
             >
               {categories.indexOf(category) !== 0 ? (
                 <svg
