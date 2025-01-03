@@ -4,19 +4,27 @@ import formatPrice from "@/utils/formatPrice";
 import type { Item } from "@/types/item";
 
 export default function Item({ item }: { item: Item }) {
-  const { id, title, picture, price, free_shipping, condition } = item;
+  const { id, title, picture, thumbnail, price, free_shipping, condition } =
+    item;
+
+  console.log("Item", item);
+
   return (
-    <li className={"items-list-item"}>
+    <li className={"items-list-item flex items-center"}>
       <Link
         to={{
           pathname: `/items/${id}`,
         }}
       >
-        <img src={picture} alt={title} />
+        <img
+          className="w-10 h-10 rounded-full mr-4"
+          src={thumbnail}
+          alt={title}
+        />
       </Link>
       <div className={"item-data"}>
         <p className={"item-price"}>
-          {formatPrice(price)}
+          {price.amount && formatPrice(price)}
           {price.decimals ? (
             <span className={"item-price-decimals"}>{price.decimals}</span>
           ) : null}

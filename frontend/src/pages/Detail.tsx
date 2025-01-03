@@ -9,7 +9,7 @@ function Detail() {
 
   useEffect(() => {
     fetch(`
-    http://localhost:9000/api/items/${params.id}
+    http://localhost:3000/api/items/${params.id}
     `)
       .then((response) => response.json())
       .then((data) => {

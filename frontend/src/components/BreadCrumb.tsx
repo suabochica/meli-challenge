@@ -4,7 +4,7 @@ interface BreadCrumbProps {
 
 export default function BreadCrumb({ categories }: BreadCrumbProps) {
   return (
-    <nav className="flex mt-4" aria-label="Breadcrumb">
+    <nav className="flex mt-4 ml-4" aria-label="Breadcrumb">
       <ol
         className={
           "inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse"

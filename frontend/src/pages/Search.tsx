@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import BreadCrumb from "@/components/BreadCrumb";
-import ItemsList from "@/components/ItemList";
+import ItemList from "@/components/ItemList";
 
 export default function Search({ search }: { search: string | null }) {
   const [items, setItems] = useState([]);
@@ -12,6 +12,7 @@ export default function Search({ search }: { search: string | null }) {
       .then((response) => response.json())
       .then((data) => {
         if (!data.error) {
+          console.log("data", data);
           setItems(data.items);
           setCategories(data.categories);
         }
@@ -21,10 +22,10 @@ export default function Search({ search }: { search: string | null }) {
       });
   }, [search]);
 
-  return items.length > 0 ? null : (
+  return items.length > 0 ? (
     <>
       <BreadCrumb categories={categories} />
-      <ItemsList items={items} />
+      <ItemList items={items} />
     </>
-  );
+  ) : null;
 }
