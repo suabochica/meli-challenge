@@ -6,7 +6,7 @@ import Home from "@/pages/Home";
 import Detail from "@/pages/Detail";
 import Search from "@/pages/Search";
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
       <Layout>
@@ -24,5 +24,3 @@ function SearchWithQuery() {
   const query = new URLSearchParams(useLocation().search);
   return <Search search={query.get("search") || ""} />;
 }
-
-export default App;

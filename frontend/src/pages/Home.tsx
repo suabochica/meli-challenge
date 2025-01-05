@@ -11,6 +11,7 @@ export default function Home() {
 
   return (
     <div>
+      <h1 className="hidden">Home Page</h1>
       <Carousel images={images} />
       <Gallery />
     </div>

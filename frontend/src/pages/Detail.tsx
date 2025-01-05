@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 
 import ItemDetail from "@/components/ItemDetail";
 
-function Detail() {
+export default function Detail() {
   const [item, setItem] = useState();
   const params = useParams();
 
@@ -23,10 +23,13 @@ function Detail() {
   }, [params.id]);
 
   if (item) {
-    return <ItemDetail item={item} />;
+    return (
+      <>
+        <h1 className="hidden">Detail Page</h1>
+        <ItemDetail item={item} />;
+      </>
+    );
   } else {
     return null;
   }
 }
-
-export default Detail;

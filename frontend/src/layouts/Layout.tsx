@@ -2,23 +2,29 @@ import { ReactNode } from "react";
 import { Link } from "react-router";
 
 import SearchBar from "@/components/SearchBar";
+import NavBar from "@/components/NavBar";
 
 function Layout({ children }: { children: ReactNode }) {
   return (
     <div>
-      <header className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link
-          to={{
-            pathname: `/`,
-          }}
-        >
-          <img
-            className="object-cover w-full rounded-t-lg h-9 md:w-48 md:rounded-none md:rounded-s-lg"
-            src="https://http2.mlstatic.com/storage/developers-site-cms-admin/DevImgs/230734061556-Mercado-Libre--2-.png"
-            alt="Mercado Libre"
-          />
-        </Link>
-        <SearchBar />
+      <header>
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <Link
+            to={{
+              pathname: `/`,
+            }}
+          >
+            <img
+              className="object-cover w-full rounded-t-lg h-9 md:w-48 md:rounded-none md:rounded-s-lg"
+              src="https://http2.mlstatic.com/storage/developers-site-cms-admin/DevImgs/230734061556-Mercado-Libre--2-.png"
+              alt="Mercado Libre"
+            />
+          </Link>
+          <SearchBar />
+        </div>
+        <div className="bg-gray-100">
+          <NavBar />
+        </div>
       </header>
       <main>
         <div className="bg-gray-100 py-8">
