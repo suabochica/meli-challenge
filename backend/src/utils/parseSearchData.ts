@@ -18,7 +18,7 @@ type Data = {
 export type ParsedSearchData = {
   author: {
     name: string;
-    lastname: string;
+    lastName: string;
   };
   categories: string[];
   items: ReturnType<typeof parseItemData>[];
@@ -28,7 +28,7 @@ export function parseSearchData(data: Data): ParsedSearchData {
   const parsedSearchData: ParsedSearchData = {
     author: {
       name: "Sergio",
-      lastname: "Benítez",
+      lastName: "Benítez",
     },
     categories:
       data.filters

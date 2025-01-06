@@ -9,9 +9,16 @@ const Item = z.object({
   id: z.string(),
   title: z.string(),
   description: ItemDescription,
-  price: z.number(),
+  currency_id: z.string(),
+  price: z.object({
+    currency: z.string(),
+    amount: z.number(),
+    decimals: z.number(),
+  }),
   condition: z.string(),
+  picture: z.string(),
   thumbnail: z.string(),
+  free_shipping: z.boolean(),
 });
 
 // Infer the TypeScript types
