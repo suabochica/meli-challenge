@@ -1,4 +1,7 @@
+import Badge from "@/components/Badge";
 import type { Item } from "@/types/item";
+
+import formatPrice from "@/utils/formatPrice";
 
 export default function ItemDetail({ item }: { item: Item }) {
   const conditions = {
@@ -12,7 +15,7 @@ export default function ItemDetail({ item }: { item: Item }) {
       <div className="md:flex-1 px-4">
         <img
           className="detailed-item-picture w-full h-full object-cover"
-          src={item.thumbnail}
+          src={item.picture}
           alt={item.title}
         />
       </div>
@@ -22,14 +25,14 @@ export default function ItemDetail({ item }: { item: Item }) {
         <div className="flex mb-4">
           <div className="mr-4">
             <span className="font-bold text-gray-700">Precio: </span>
-            <span className="text-gray-600 "> $ {item.price.amount}</span>
+            <span className="text-gray-600 "> 
+          {item.price.amount && formatPrice(item.price)}
+</span>
           </div>
           <div>
-            <span className="font-bold text-gray-700">Disponibilidad:</span>
-            <span className="text-gray-600 ">
-              {item.condition ? conditions[item.condition] : " "} -{" "}
-              {item.sold_quantity !== 1 ? "vendidos" : "vendido"}
-            </span>
+            <Badge
+              condition={item.condition ? conditions[item.condition] : ""}
+            />
           </div>
         </div>
 

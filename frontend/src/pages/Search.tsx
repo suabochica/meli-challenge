@@ -12,7 +12,6 @@ export default function Search({ search }: { search: string | null }) {
       .then((response) => response.json())
       .then((data) => {
         if (!data.error) {
-          console.log("data", data);
           setItems(data.items);
           setCategories(data.categories);
         }

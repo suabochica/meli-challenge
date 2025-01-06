@@ -11,7 +11,7 @@ export default function BreadCrumb({ categories }: BreadCrumbProps) {
         }
       >
         {categories &&
-          categories.map((category) => (
+          categories.map((category, idx) => (
             <a
               href="#"
               className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600"
@@ -44,7 +44,7 @@ export default function BreadCrumb({ categories }: BreadCrumbProps) {
                 </svg>
               )}
 
-              <li key={category} className={"inline-flex items-center"}>
+              <li key={idx} className={"inline-flex items-center"}>
                 {category}
               </li>
             </a>

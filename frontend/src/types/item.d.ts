@@ -8,7 +8,7 @@ export type Item = {
   free_shipping: boolean;
   price: Price;
   sold_quantity: number | string;
-  thumbnail: string;
+  picture: string;
   title: string;
 };
 
