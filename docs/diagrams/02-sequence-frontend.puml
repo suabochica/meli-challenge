@@ -1,0 +1,19 @@
+@startuml sequence
+
+participant Main as Main
+participant App as App
+participant Pages as Pages
+participant Components as Components
+participant Utils as Utils
+
+App -> Main : To main 
+Pages -> App : To route
+Components -> Pages : To components
+Utils -> Pages : formatters
+Utils -> Components : formatters
+
+group Layout
+  Pages <-> Components : UI Composition
+end
+
+@enduml

@@ -1,0 +1,16 @@
+@startuml sequence
+
+participant Main as Main
+participant Router as Router
+participant Controller as Controller
+participant Service as Service
+participant Utils as Utils
+participant Model as Model
+
+Router -> Main : To main 
+Controller -> Router : To router
+Service -> Controller : To controller
+Utils -> Service : parsers
+Model -> Service : To service
+
+@enduml

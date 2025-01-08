@@ -1,66 +1,45 @@
-Meli Challenge
-====
+# 🧑🏾‍💼 Frontend
 
-🧰 Tech Stack
-----
+Proyecto frontend para mostrar los datos transformados en el backend.
 
-- [pnpm](https://pnpm.io), as package manager.
+![Home](./docs/imgs/04-home.png "Home")
+
+## 🧰 Tech Stack
+
 - [react](https://react.dev/), as UI library for web.
-- [react-router](https://reactrouter.com/), as standard-focused, muilti-strategy router for react.
-- [vite](https://vite.dev/), as build tool.
+- [react-router](https://reactrouter.com/), como manejador de rutas para React.
+- [vite](https://vite.dev/), como herramienta de construcción.
+- [vitest](https://vitest.dev/), como framework de pruebas.
+- [testing-library](https://testing-library.com/), como biblioteca de utilidades para promover buenas prácticas en pruebas de interfaces de usuario.
+- [tailwindcss](https://tailwindcss.com/), como framework para definir estilos sin salir del HTML.
 
-🔌 PlugIns
-----
+## 🔌 PlugIns
 
 - [tsConfigPaths](https://www.npmjs.com/package/vite-tsconfig-paths), to resolve imports using TypeScript's path mapping.
 - [svgr](https://react-svgr.com), to transform svg into React components.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📁 Estructura del proyecto
 
-Currently, two official plugins are available:
+- _assets_: carpeta con los archivos estáticos utilizados para el proyecto.
+- _components_: carpeta con componentes UI utilizados tanto en las páginas como en las plantillas.
+- _pages_: carpeta con las páginas que atienden el enrutamiento de la aplicación.
+- _layout_: carpeta con la plantilla reutilizada en todas las páginas.
+- _utils_: carpeta con utilidaes transversales para el proyecto (e.g., formato del precio).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[![sequence-frontend](https://tinyurl.com/ym49fxtm)](https://tinyurl.com/ym49fxtm) <!--![sequence-frontend](../docs/diagrams/02-sequence-frontend.puml)-->
 
-Expanding the ESLint configuration
----
+## 🧞 Comandos
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Estos comandos se ejecutan en el directorio `frontend/`.
 
-- Configure the top-level `parserOptions` property like this:
+| Comando        | Acción                                             |
+| :------------- | :------------------------------------------------- |
+| `pnpm install` | Instalar las dependencias                          |
+| `pnpm dev`     | Comienza el programa en `localhost:5173`           |
+| `pnpm build`   | Corre el compilador de TypeScript.                 |
+| `pnpm test`    | Corre las pruebas unitarias del proyecto frontend. |
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🆙 Mejoras
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- [ ] Completar pruebas unitarias
+- [ ] Utilizar Streaming para preveer peticiones lentas de datos con una estrategia de páginas de carga y esqueletos más el uso de componentes con `<Suspense>`

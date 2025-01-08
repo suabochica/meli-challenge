@@ -1,0 +1,16 @@
+@startuml packages
+
+package "monorepo" {
+  [backend]
+  [frontend]
+}
+
+package "backend" {
+  [internal-api]
+}
+
+[backend] ..> [meli-apis] : request
+[backend] ..> [internal-api] : expose
+[frontend] ..> [internal-api] : consume
+
+@enduml
